@@ -1,0 +1,450 @@
+body {
+  margin: 0;
+  font-family: 'Muli', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* ----- NAV BAR ----- */
+
+/* wide screen */
+@media (min-width: 768px) {
+  .nav-icon,
+  #nav-drawer {
+    display: none !important;
+  }
+}
+
+/* narrow screen */
+@media (max-width: 767.99px) {
+  #nav-links {
+    display: none !important;
+  }
+}
+
+#nav {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid transparent;
+  background-color: white;
+}
+
+.nav-static {
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-fixed {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1);
+  border-bottom: 1px solid #aab2bd;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  border-width: 0 0 1px;
+}
+
+#nav a {
+  color: #666666;
+  font-weight: 500;
+  display: inline-block;
+  margin: 1em;
+  text-decoration: none;
+}
+
+#nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#nav-logo {
+  align-self: center;
+}
+
+.logo {
+  max-width: 350px;
+  height: auto;
+}
+
+#nav-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-icon {
+  padding: 1rem;
+  color: black;
+}
+
+#nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#nav-drawer {
+  position: fixed;
+  z-index: -1;
+  width: 30%;
+  padding-top: 50px;
+  top: 79px;
+  right: 0em;
+  background-color: white;
+  border-left: 1px solid #f0f2f5;
+  border-bottom: 1px solid #f0f2f5;
+  /* box-shadow: 0 1px 2px 0 rgba(69, 68, 68, 0.5); */
+}
+
+#nav-drawer li:hover {
+  background-color: #f5f5f5;
+}
+
+#nav-drawer li:active {
+  background-color: #d8d8d8;
+}
+
+/* ----- WELCOME SECTION ----- */
+
+.section-welcome {
+  padding: 10px;
+  background-color: #d0d0d0;
+}
+
+img.profile {
+  border-radius: 135px;
+  width: 270px;
+  height: auto;
+  transition: width .5s ease-out;
+}
+
+img.profile.transition {
+  border-radius: 15px;
+  width: 30px;
+}
+
+.section-welcome .text.large {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: 800;
+  color: white;
+}
+
+.section-welcome .text.medium {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 300;
+  color: white;
+}
+
+.section-welcome a {
+  cursor: pointer;
+}
+
+img.arrow {
+  margin-bottom: 15px;
+  width: 80px;
+  height: auto;
+}
+
+/* ----- ABOUT SECTION ----- */
+
+.section-about {
+  padding: 10px;
+}
+
+.section-about .header {
+  margin: 20px;
+  font-size: 28px;
+  font-weight: 500;
+  color: #c4e3cb;
+}
+
+.section-about h3 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.section-about .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.section-about .col {
+  flex: 45%;
+  margin: 15px;
+  font-family: 'Open Sans', sans-serif;
+  color: #666666;
+}
+
+.section-about .col.right {
+  height: 50%;
+}
+
+.section-about .text {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1.5em;
+  text-align: justify;
+}
+
+.section-about .paragraph {
+  margin-top: 25px;
+}
+
+/* ----- DOWNLOAD BTN ----- */
+
+.section-about .button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.download-btn {
+  display: block;
+  padding: 5px;
+  width: 10em;
+  height: 2.2em;
+  background: #c4e3cb;
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+  font-size: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-btn span {
+  display: inline-block;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  height: 100%;
+  transition: all 0.4s linear;
+  position: relative;
+  top: -18px;
+}
+
+.download-btn:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  top: -100%;
+  left: 0px;
+  transition: all 0.2s ease-in;
+}
+
+.download-btn:hover span {
+  -webkit-transform: translateY(300%);
+  -ms-transform: translateY(300%);
+  transform: translateY(300%);
+}
+
+.download-btn svg {
+  display: block;
+  opacity: 0;
+  margin: auto;
+  transition: opacity 0.2s ease-out;
+}
+
+.download-btn:hover svg {
+  opacity: 1;
+  display: inline-block;
+  margin: auto;
+  height: 100%;
+  transition: all 0.3s linear 0s;
+
+  /* transition: all 0.2s ease-in; */
+}
+
+.download-btn:hover:before {
+  top: 0px;
+}
+
+/* ----- SKILLS SECTION ----- */
+
+.section-skills {
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+.section-skills .header {
+  margin: 20px;
+  font-size: 28px;
+  font-weight: 500;
+  color: rgb(130, 130, 130);
+}
+
+.section-skills .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+.section-skills .col {
+  flex: 30%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #666666;
+}
+
+.section-skills h3 {
+  margin: 10px;
+}
+
+.section-skills .col.left {
+  margin-right: 20px;
+  background-color: white;
+}
+
+.section-skills .col.middle {
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: white;
+}
+
+.section-skills .col.right {
+  margin-left: 20px;
+  background-color: white;
+}
+
+.section-skills .text-header {
+  flex-direction: column;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.section-skills .text-header {
+  background-color: #c4e3cb;
+  color: white;
+}
+
+.section-skills svg {
+  border-radius: 50%;
+  border: 1px solid white;
+  padding: 15px;
+  background-color: white;
+  color: #c4e3cb;
+}
+
+.section-skills .text-body {
+  padding: 30px;
+  line-height: 2em;
+}
+
+/* ----- PORTFOLIO SECTION ----- */
+
+.section-portfolio {
+  padding: 10px;
+}
+
+.section-portfolio .header {
+  margin: 20px;
+  font-size: 28px;
+  font-weight: 500;
+  color: #c4e3cb;
+}
+
+.section-portfolio .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+.section-portfolio .col {
+  flex: 30%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #666666;
+}
+
+.section-portfolio h3 {
+  margin: 10px;
+}
+
+.section-portfolio .col.left {
+  margin-right: 20px;
+  background-color: #f5f5f5;
+}
+
+.section-portfolio .col.right {
+  margin-left: 20px;
+  background-color: #f5f5f5;
+}
+
+.section-portfolio .text-header {
+  flex-direction: column;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.section-portfolio .text-header {
+  background-color: #c4e3cb;
+  color: white;
+}
+
+.section-portfolio .text-body {
+  padding: 30px;
+  line-height: 2em;
+}
+
+/* ----- CONTACT SECTION ----- */
+
+.section-contact {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.section-contact .header {
+  margin: 20px;
+  font-size: 28px;
+  font-weight: 500;
+  color: rgb(130, 130, 130);
+}
+
+.section-contact .contact-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.section-contact .form-field {
+  margin: 5px;
+  background-color: white;
+}
+
+.section-contact input[type="text"],
+.section-contact label {
+  font-family: 'Open Sans';
+}
+
+.section-contact .submit {
+  align-self: flex-start;
+  margin: 10px;
+  width: 20%;
+  box-shadow: none;
+}
