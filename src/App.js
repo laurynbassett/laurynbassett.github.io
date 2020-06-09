@@ -11,6 +11,7 @@ function initializeReactGA() {
   ReactGA.initialize(secrets.GOOGLE_ANALYTICS_TRACKING_ID)
   ReactGA.pageview('/homepage')
 }
+initializeReactGA()
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { List, ListItem } from '@material-ui/core'
-import { Close, Menu } from '@material-ui/icons'
+import { Close, GitHub, Menu, LinkedIn } from '@material-ui/icons'
 
 const drawer = (
   <List component='nav' className='nav-drawer' aria-label='contacts'>
@@ -19,6 +19,14 @@ const drawer = (
     </ListItem>
     <ListItem button>
       <Link to='/#contact'>Contact</Link>
+    </ListItem>
+    <ListItem button className='icons'>
+      <a href='github.com/laurynbassett' target='_blank' rel='noopener noreferrer'>
+        <GitHub />
+      </a>
+      <a href='https://www.linkedin.com/in/laurynbassett/' target='_blank' rel='noopener noreferrer'>
+        <LinkedIn />
+      </a>
     </ListItem>
   </List>
 )
@@ -77,6 +85,19 @@ export default class Navbar extends Component {
             <Link to='/#skills'>Skills</Link>
             <Link to='/#portfolio'>Portfolio</Link>
             <Link to='/#contact'>Contact</Link>
+            <div className='icons'>
+              <a className='github' href='github.com/laurynbassett' target='_blank' rel='noopener noreferrer'>
+                <GitHub />
+              </a>
+              <a
+                className='linked-in'
+                href='https://www.linkedin.com/in/laurynbassett/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <LinkedIn />
+              </a>
+            </div>
           </div>
           {this.state.openDrawer && <div id='nav-drawer'>{drawer}</div>}
         </div>

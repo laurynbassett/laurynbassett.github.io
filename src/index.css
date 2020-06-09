@@ -120,6 +120,15 @@ code {
   background-color: #d8d8d8;
 }
 
+#nav-links a.github {
+  margin-right: 0.25em;
+}
+
+#nav-links a.linked-in {
+  margin-left: 0.25em;
+  margin-right: 2.5em;
+}
+
 /* ----- WELCOME SECTION ----- */
 
 .section-welcome {
@@ -142,8 +151,9 @@ img.profile.transition {
 .section-welcome .text.large {
   margin-top: 25px;
   margin-bottom: 25px;
-  font-size: 30px;
-  font-weight: 800;
+  font-size: 34px;
+  font-family: 'Muli';
+  font-weight: 700;
   color: white;
 }
 
