@@ -3,9 +3,9 @@ import { Snackbar, TextField } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import MuiAlert from '@material-ui/lab/Alert'
 import { Send } from '@material-ui/icons'
-
 import axios from 'axios'
 import Recaptcha from 'react-google-recaptcha'
+import secrets from '../secrets'
 
 const initialState = {
   name: '',
@@ -56,7 +56,7 @@ export default class ContactForm extends Component {
 
         await axios({
           method: 'POST',
-          url: `${process.env.FORMIK_ENDPOINT}`,
+          url: `${secrets.FORMIK_ENDPOINT}`,
           headers: {
             'Content-Type': 'application/json'
           },
@@ -89,7 +89,6 @@ export default class ContactForm extends Component {
   render() {
     const { name, email, subject, message } = this.state
     const style = { fontFamily: 'Open Sans' }
-
     return (
       <Fragment>
         <form onSubmit={this.handleSubmit} className='contact-form'>
@@ -148,7 +147,7 @@ export default class ContactForm extends Component {
             email &&
             message && (
               <Recaptcha
-                sitekey={process.env.RECAPTCHA_SECRET_KEY}
+                sitekey={secrets.RECAPTCHA_SECRET_KEY}
                 name='recaptcha'
                 onChange={value => this.setState({ recaptcha: value })}
               />
