@@ -147,7 +147,7 @@ export default class ContactForm extends Component {
             email &&
             message && (
               <Recaptcha
-                sitekey={secrets.RECAPTCHA_SECRET_KEY}
+                sitekey={secrets.RECAPTCHA_SITE_KEY}
                 name='recaptcha'
                 onChange={value => this.setState({ recaptcha: value })}
               />
