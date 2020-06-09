@@ -51,8 +51,7 @@ const ContactForm = () => {
           } else {
             await axios({
               method: 'POST',
-              // url: `${process.env.FORMIK_ENDPOINT}`,
-              url: 'https://api.formik.com/submit/laurynbassett/contact',
+              url: `${process.env.FORMIK_ENDPOINT}`,
               headers: {
                 'Content-Type': 'application/json'
               },
@@ -122,8 +121,7 @@ const ContactForm = () => {
               <div className='formik-input'>
                 <FastField
                   component={Recaptcha}
-                  sitekey='6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
-                  // sitekey={process.env.RECAPTCHA_SECRET_KEY}
+                  sitekey={process.env.RECAPTCHA_SECRET_KEY}
                   name='recaptcha'
                   onChange={value => setFieldValue('recaptcha', value)}
                 />

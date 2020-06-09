@@ -1,11 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
+import dotenv from 'dotenv'
+import path from 'path'
 
 import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
-require('dotenv').config()
+
+dotenv.config({ path: path.join(__dirname, '..', '/.env') })
 
 ReactDOM.render(
   <Router>
