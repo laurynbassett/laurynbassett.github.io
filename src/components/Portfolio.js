@@ -8,10 +8,12 @@ const Portfolio = () => {
       <div className='row'>
         <div className='col left'>
           <div className='text-header left'>
-            <Link to='/banter'>
+            {/* <Link to='/banter'> */}
+            <a href='https://github.com/laurynbassett/banter-app' target='_blank'>
               <h3>Banter</h3>
               <div className='subheader'>Mobile App</div>
-            </Link>
+            </a>
+            {/* </Link> */}
           </div>
           <div className='text-body left'>
             <div className='row'>
@@ -23,10 +25,12 @@ const Portfolio = () => {
         </div>
         <div className='col right'>
           <div className='text-header right'>
-            <Link to='/graze'>
+            <a href='https://github.com/laurynbassett/graze-app' target='_blank'>
+              {/* <Link to='/graze'> */}
               <h3>Graze</h3>
               <div className='subheader'>Mobile App</div>
-            </Link>
+              {/* </Link> */}
+            </a>
           </div>
           <div className='text-body right'>
             <div className='row'>
@@ -38,10 +42,12 @@ const Portfolio = () => {
         </div>
         <div className='col left'>
           <div className='text-header left'>
-            <Link to='/grace-shopper'>
+            <a href='https://github.com/sjli-grace-shopper/covid-store' target='_blank'>
+              {/* <Link to='/grace-shopper'> */}
               <h3>Grace Shopper</h3>
               <div className='subheader'>Ecommerce Site</div>
-            </Link>
+              {/* </Link> */}
+            </a>
           </div>
           <div className='text-body left'>
             <div className='row'>
@@ -51,10 +57,12 @@ const Portfolio = () => {
         </div>
         <div className='col right'>
           <div className='text-header right'>
-            <Link to='/orderista'>
+            <a href='https://github.com/laurynbassett/orderista' target='_blank'>
+              {/* <Link to='/orderista'> */}
               <h3>Orderista</h3>
               <div className='subheader'>Restaurant Site</div>
-            </Link>
+              {/* </Link> */}
+            </a>
           </div>
           <div className='text-body right'>
             <div className='row'>
