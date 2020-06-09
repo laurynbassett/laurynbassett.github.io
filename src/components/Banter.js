@@ -1,7 +1,9 @@
 import React from 'react'
 
+import ImageModal from '.'
+
 const Banter = () => {
-  return <div>Banter</div>
+  return <div className='project-container'>Banter</div>
 }
 
 export default Banter

@@ -210,8 +210,7 @@ img.arrow {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.5em;
-  /* text-align: justify; */
-  text-align: center;
+  text-align: justify;
 }
 
 .section-about .paragraph {
@@ -230,8 +229,6 @@ img.arrow {
 .download-btn {
   display: block;
   padding: 5px;
-  position: relative;
-  overflow: hidden;
   width: 10em;
   height: 2.2em;
   background: #c4e3cb;
@@ -239,55 +236,57 @@ img.arrow {
   border-radius: 10px;
   color: white;
   font-size: 16px;
-}
-
-.download-btn:before {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: -100%;
-  left: 0px;
-  text-align: center;
-  line-height: 40px;
-  color: white;
+  position: relative;
+  overflow: hidden;
 }
 
 .download-btn span {
-  opacity: 1;
   display: inline-block;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  height: 100%;
+  transition: all 0.4s linear;
   position: relative;
-  top: 5px;
-  transition: all 0.6s ease-out;
-  font-family: 'Open Sans';
+  top: -18px;
+}
+
+.download-btn:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  top: -100%;
+  left: 0px;
+  transition: all 0.2s ease-in;
 }
 
 .download-btn:hover span {
-  opacity: 0;
-  -webkit-transform: translateY(150%);
-  -ms-transform: translateY(150%);
-  transform: translateY(150%);
-  transition: all 0.4s ease-out;
+  -webkit-transform: translateY(300%);
+  -ms-transform: translateY(300%);
+  transform: translateY(300%);
 }
 
 .download-btn svg {
-  opacity: 0;
   display: block;
+  opacity: 0;
   margin: auto;
-  position: absolute;
-  top: -20px;
-  bottom: 100%;
-  left: 0;
-  right: 0;
-  transition: all 0.4s ease-in;
+  transition: opacity 0.2s ease-out;
 }
 
 .download-btn:hover svg {
   opacity: 1;
   display: inline-block;
   margin: auto;
-  top: 45px;
   height: 100%;
-  transition: all 0.5s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+
+.download-btn:hover:before {
+  top: 0px;
 }
 
 .download-btn:active {
@@ -361,6 +360,8 @@ img.arrow {
   padding: 15px;
   background-color: white;
   color: #c4e3cb;
+  /* -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease; */
   opacity: 1;
   -moz-transition: all .4s linear;
   -webkit-transition: all .4s linear;
@@ -518,33 +519,58 @@ img.arrow {
 
 .section-contact .form-field {
   margin: 5px;
+  padding: 10px;
   background-color: white;
-  color: #666666;
+  border: 1px solid #ececec;
+  border-radius: 5px;
+  outline: 2px solid transparent;
+  box-sizing: border-box;
 }
 
-.section-contact input[type="text"] {
-  font-family: 'Open Sans';
-  color: #666666;
+.section-contact .form-field:hover {
+  border: 1px solid #c4e3cb;
+  border-radius: 5px;
+  margin: 5px;
 }
 
+.section-contact .form-field:focus {
+  border: 2px solid #c4e3cb;
+  margin: 4px;
+}
+
+.section-contact input[type="text"],
 .section-contact label {
   font-family: 'Open Sans';
   color: #bcbcbc;
 }
 
+.section-contact .formik-input {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.section-contact .formik-center {
+  text-align: left;
+}
+
+.section-contact h4 {
+  font-weight: normal;
+}
+
 /* ----- SEND BTN ----- */
 
-.section-contact .submit-row {
+/* .section-contact button {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin-top: 10px;
-  margin-right: 5px;
-  margin-left: 5px;
-}
+  justify-content: center;
+  align-self: flex-start;
+  margin-top: 35px;
+} */
 
 .submit-btn {
   display: block;
+  margin-top: 10px;
+  margin-left: 5px;
   position: relative;
   width: 9em;
   height: 2.3em;
@@ -581,7 +607,7 @@ img.arrow {
   opacity: 1;
   display: inline-block;
   position: relative;
-  top: 6px;
+  top: 0px;
   transition: all 0.6s ease-out;
   font-family: 'Open Sans';
 }
@@ -610,7 +636,7 @@ img.arrow {
   opacity: 1;
   display: inline-block;
   margin: auto;
-  top: 35px;
+  top: 30px;
   height: 100%;
   transition: all 0.5s linear 0s;
 }

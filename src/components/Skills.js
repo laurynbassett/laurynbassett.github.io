@@ -11,7 +11,6 @@ export default class Skills extends Component {
   }
 
   onChange = isVisible => {
-    console.log('IS VISIBLE', isVisible)
     if (isVisible) {
       this.setState({ isVisible: true })
     } else {

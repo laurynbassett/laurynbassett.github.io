@@ -3,7 +3,6 @@ import { Card, CardContent } from '@material-ui/core'
 import { GetApp } from '@material-ui/icons'
 
 const About = props => {
-  console.log('POSITION', props.position)
   return (
     <div className='section-about'>
       <div className='header'>About Me</div>
@@ -40,7 +39,7 @@ const About = props => {
               to and be a part of a bigger picture.
             </div>
             <div className='button'>
-              <a className='download-btn' href='/files/resume.pdf' target='_blank'>
+              <a className='download-btn' href='/files/resume.pdf' target='_blank' rel='noopener noreferrer'>
                 <GetApp />
                 <span>Download Resume</span>
               </a>

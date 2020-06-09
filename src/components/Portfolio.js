@@ -9,7 +9,7 @@ const Portfolio = () => {
         <div className='col left'>
           <div className='text-header left'>
             {/* <Link to='/banter'> */}
-            <a href='https://github.com/laurynbassett/banter-app' target='_blank'>
+            <a href='https://github.com/laurynbassett/banter-app' target='_blank' rel='noopener noreferrer'>
               <h3>Banter</h3>
               <div className='subheader'>Mobile App</div>
             </a>
@@ -25,7 +25,7 @@ const Portfolio = () => {
         </div>
         <div className='col right'>
           <div className='text-header right'>
-            <a href='https://github.com/laurynbassett/graze-app' target='_blank'>
+            <a href='https://github.com/laurynbassett/graze-app' target='_blank' rel='noopener noreferrer'>
               {/* <Link to='/graze'> */}
               <h3>Graze</h3>
               <div className='subheader'>Mobile App</div>
@@ -42,7 +42,7 @@ const Portfolio = () => {
         </div>
         <div className='col left'>
           <div className='text-header left'>
-            <a href='https://github.com/sjli-grace-shopper/covid-store' target='_blank'>
+            <a href='https://github.com/sjli-grace-shopper/covid-store' target='_blank' rel='noopener noreferrer'>
               {/* <Link to='/grace-shopper'> */}
               <h3>Grace Shopper</h3>
               <div className='subheader'>Ecommerce Site</div>
@@ -57,7 +57,7 @@ const Portfolio = () => {
         </div>
         <div className='col right'>
           <div className='text-header right'>
-            <a href='https://github.com/laurynbassett/orderista' target='_blank'>
+            <a href='https://github.com/laurynbassett/orderista' target='_blank' rel='noopener noreferrer'>
               {/* <Link to='/orderista'> */}
               <h3>Orderista</h3>
               <div className='subheader'>Restaurant Site</div>

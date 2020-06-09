@@ -17,7 +17,6 @@ const drawer = (
     <ListItem button>
       <Link to='/#portfolio'>Portfolio</Link>
     </ListItem>
-    <ListItem button />
     <ListItem button>
       <Link to='/#contact'>Contact</Link>
     </ListItem>
