@@ -39,7 +39,7 @@ export default class Contact extends Component {
     return (
       <div className='section-contact'>
         <div className='header'>Contact</div>
-        <div>{`Let's Get In Touch!`}</div>
+        <div className='subheader'>{`Let's Get In Touch!`}</div>
         <form onSubmit={this.handleSubmit} className='contact-form'>
           <StyledTextField
             required

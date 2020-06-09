@@ -59,9 +59,11 @@ export default class Navbar extends Component {
     return (
       <div id='nav' className={`nav-${this.state.showFixedNav ? 'fixed' : 'static'}`}>
         <div id='nav-bar'>
-          <div id='nav-logo'>
-            <img className='logo' src='/images/full-logo.png' alt='logo' />
-          </div>
+          <a href='/'>
+            <div id='nav-logo'>
+              <img className='logo' src='/images/full-logo.png' alt='logo' />
+            </div>
+          </a>
           {this.state.openDrawer ? (
             <div id='nav-icons'>
               <Close className='nav-icon' onClick={this.handleDrawerToggle} />

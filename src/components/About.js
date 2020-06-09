@@ -2,7 +2,8 @@ import React from 'react'
 import { Card, CardContent } from '@material-ui/core'
 import { GetApp } from '@material-ui/icons'
 
-const About = () => {
+const About = props => {
+  console.log('POSITION', props.position)
   return (
     <div className='section-about'>
       <div className='header'>About Me</div>

@@ -50,11 +50,20 @@ code {
 }
 
 #nav a {
-  color: #666666;
-  font-weight: 500;
+  color: #939393;
+  font-weight: 300;
   display: inline-block;
   margin: 1em;
   text-decoration: none;
+}
+
+#nav a:hover {
+  color: #b0b0b0;
+}
+
+#nav a:active {
+  color: #e3e3e3;
+  font-weight: 600;
 }
 
 #nav-bar {
@@ -166,11 +175,13 @@ img.arrow {
 .section-about .header {
   margin: 20px;
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 400;
   color: #c4e3cb;
 }
 
 .section-about h3 {
+  font-size: 18px;
+  font-weight: 400;
   margin-top: 25px;
   margin-bottom: 25px;
 }
@@ -197,7 +208,8 @@ img.arrow {
   margin-right: 15px;
   margin-bottom: 15px;
   padding: 0;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 300;
   line-height: 1.5em;
   text-align: justify;
 }
@@ -224,7 +236,7 @@ img.arrow {
   text-align: center;
   border-radius: 20px;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   position: relative;
   overflow: hidden;
 }
@@ -272,8 +284,6 @@ img.arrow {
   margin: auto;
   height: 100%;
   transition: all 0.3s linear 0s;
-
-  /* transition: all 0.2s ease-in; */
 }
 
 .download-btn:hover:before {
@@ -290,7 +300,7 @@ img.arrow {
 .section-skills .header {
   margin: 20px;
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 400;
   color: rgb(130, 130, 130);
 }
 
@@ -309,6 +319,8 @@ img.arrow {
 }
 
 .section-skills h3 {
+  font-size: 18px;
+  font-weight: 400;
   margin: 10px;
 }
 
@@ -329,12 +341,12 @@ img.arrow {
 }
 
 .section-skills .text-header {
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding-top: 10px;
-  padding-bottom: 5px;
-}
-
-.section-skills .text-header {
+  padding-bottom: 10px;
   background-color: #c4e3cb;
   color: white;
 }
@@ -345,11 +357,39 @@ img.arrow {
   padding: 15px;
   background-color: white;
   color: #c4e3cb;
+  /* -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease; */
+  opacity: 1;
+  -moz-transition: all .4s linear;
+  -webkit-transition: all .4s linear;
+  -o-transition: all .4s linear;
+  transition: all .4s linear;
+  transform: translate3d(-100px, 0px, 0px);
+  transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+}
+
+.section-skills svg:hover {
+  transition: opacity .3s, transform .3s;
+  transform: rotate(-180deg) scale(.5);
+}
+
+.section-skills svg.in-view {
+  opacity: 1;
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -o-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
 }
 
 .section-skills .text-body {
   padding: 30px;
   line-height: 2em;
+  font-weight: 300;
 }
 
 /* ----- PORTFOLIO SECTION ----- */
@@ -361,15 +401,16 @@ img.arrow {
 .section-portfolio .header {
   margin: 20px;
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 400;
   color: #c4e3cb;
 }
 
-.section-portfolio .row {
+.section-portfolio > .row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin: 30px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 10px;
 }
 
 .section-portfolio .col {
@@ -379,29 +420,63 @@ img.arrow {
   color: #666666;
 }
 
-.section-portfolio h3 {
+.section-portfolio .text-body .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.section-portfolio a {
   margin: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.section-portfolio a:hover {
+  font-weight: 400;
+  color: #f2f2f2;
+}
+
+.section-portfolio a:active {
+  font-weight: 600;
+  color: #aeceb6;
 }
 
 .section-portfolio .col.left {
-  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
   background-color: #f5f5f5;
 }
 
 .section-portfolio .col.right {
-  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
   background-color: #f5f5f5;
+}
+
+.section-portfolio h3 {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
 }
 
 .section-portfolio .text-header {
   flex-direction: column;
-  padding-top: 10px;
-  padding-bottom: 5px;
 }
 
 .section-portfolio .text-header {
   background-color: #c4e3cb;
   color: white;
+}
+
+.section-portfolio .subheader {
+  font-weight: 300;
+}
+
+.section-portfolio .text-body img {
+  height: 200px;
 }
 
 .section-portfolio .text-body {
@@ -420,10 +495,18 @@ img.arrow {
 }
 
 .section-contact .header {
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 400;
   color: rgb(130, 130, 130);
+}
+
+.section-contact .subheader {
+  /* margin: 20px; */
+  font-size: 18px;
+  font-weight: 600;
+  color: lightgray;
 }
 
 .section-contact .contact-form {
@@ -440,6 +523,7 @@ img.arrow {
 .section-contact input[type="text"],
 .section-contact label {
   font-family: 'Open Sans';
+  color: #bcbcbc;
 }
 
 .section-contact .submit {
