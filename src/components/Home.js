@@ -1,7 +1,13 @@
-import React from 'react'
-import { About, Contact, Portfolio, Skills, Welcome } from '.'
+import React, { useEffect } from 'react'
+import { About, Contact, initGA, PageView, Portfolio, Skills, Welcome } from '.'
 
 const Home = () => {
+  useEffect(() => {
+    // Set Google Analytics on page
+    initGA()
+    PageView()
+  })
+
   return (
     <div id='home'>
       <Welcome />

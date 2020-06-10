@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 export default class Welcome extends Component {
   constructor(props) {
     super(props)
@@ -27,6 +28,7 @@ export default class Welcome extends Component {
   render() {
     return (
       <div className='section-welcome'>
+        <p>{process.env.FORMIK_ENDPOINT}</p>
         <div className='text large'>Hi There, I'm Lauryn</div>
         <img className={`profile ${this.state.transition && 'transition'}`} src='/images/welcome.jpg' alt='welcome' />
         <div className='text medium'>Full Stack Developer</div>

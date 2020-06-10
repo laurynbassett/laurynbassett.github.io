@@ -5,7 +5,6 @@ import MuiAlert from '@material-ui/lab/Alert'
 import { Send } from '@material-ui/icons'
 import axios from 'axios'
 import Recaptcha from 'react-google-recaptcha'
-import secrets from '../secrets'
 
 const initialState = {
   name: '',
@@ -56,7 +55,7 @@ export default class ContactForm extends Component {
 
         await axios({
           method: 'POST',
-          url: `${secrets.FORMIK_ENDPOINT}`,
+          url: `${process.env.REACT_APP_FORMIK_ENDPOINT}`,
           headers: {
             'Content-Type': 'application/json'
           },
@@ -147,7 +146,7 @@ export default class ContactForm extends Component {
             email &&
             message && (
               <Recaptcha
-                sitekey={secrets.RECAPTCHA_SITE_KEY}
+                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
                 name='recaptcha'
                 onChange={value => this.setState({ recaptcha: value })}
               />

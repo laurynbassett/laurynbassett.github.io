@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { AccountTree, Build, Code } from '@material-ui/icons'
+
 const VisibilitySensor = require('react-visibility-sensor').default
+
 export default class Skills extends Component {
   constructor(props) {
     super(props)
