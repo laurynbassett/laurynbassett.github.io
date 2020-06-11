@@ -8,10 +8,12 @@ const Portfolio = props => {
       <div className='row'>
         <div className='col left'>
           <div className='text-header left'>
-            <Link to='/banter'>
+            <a href='https://github.com/fsa-capstone-team-red/banter' target='_blank' rel='noopener noreferrer'>
+              {/* <Link to='/banter'> */}
               <h3>Banter</h3>
               <div className='subheader'>Mobile App</div>
-            </Link>
+              {/* </Link> */}
+            </a>
           </div>
           <div className='text-body left'>
             <div className='row'>
