@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { ExpandMore } from '@material-ui/icons'
 
 export default class Welcome extends Component {
   constructor(props) {
@@ -32,9 +33,19 @@ export default class Welcome extends Component {
         <div className='text large'>Hi There, I'm Lauryn</div>
         <img className={`profile ${this.state.transition && 'transition'}`} src='/images/welcome.jpg' alt='welcome' />
         <div className='text medium'>Full Stack Developer</div>
-        <a href='/#about'>
-          <img className='arrow' src='/images/down-arrow.png' alt='welcome' />
-        </a>
+        <div className='round-container'>
+          <a onClick={this.props.aboutScroll}>
+            <div className='round'>
+              <ExpandMore className={`arrow one ${this.state.transition && 'transition'}`} />
+              <ExpandMore className={`arrow two ${this.state.transition && 'transition'}`} />
+            </div>
+            {/* <img
+            className={`arrow ${this.state.transition && 'transition'}`}
+            src='/images/down-arrow.png'
+            alt='welcome'
+          /> */}
+          </a>
+        </div>
       </div>
     )
   }

@@ -4,7 +4,7 @@ import { GetApp } from '@material-ui/icons'
 
 const About = props => {
   return (
-    <div className='section-about'>
+    <div className='section-about' ref={props.aboutRef}>
       <div className='header'>About Me</div>
       <div className='row'>
         <Card className='col 1'>

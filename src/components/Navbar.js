@@ -1,35 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { List, ListItem } from '@material-ui/core'
 import { Close, GitHub, Menu, LinkedIn } from '@material-ui/icons'
-
-const drawer = (
-  <List component='nav' className='nav-drawer' aria-label='contacts'>
-    <ListItem button>
-      <Link to='/#about'>About Me</Link>
-    </ListItem>
-    <ListItem button>
-      <Link to='/#skills'>Skills</Link>
-    </ListItem>
-    <ListItem button>
-      <Link to='/#education'>Education</Link>
-    </ListItem>
-    <ListItem button>
-      <Link to='/#portfolio'>Portfolio</Link>
-    </ListItem>
-    <ListItem button>
-      <Link to='/#contact'>Contact</Link>
-    </ListItem>
-    <ListItem button className='icons'>
-      <a href='github.com/laurynbassett' target='_blank' rel='noopener noreferrer'>
-        <GitHub />
-      </a>
-      <a href='https://www.linkedin.com/in/laurynbassett/' target='_blank' rel='noopener noreferrer'>
-        <LinkedIn />
-      </a>
-    </ListItem>
-  </List>
-)
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -63,28 +34,43 @@ export default class Navbar extends Component {
   }
 
   render() {
+    const { aboutScroll, contactScroll, portfolioScroll, skillsScroll } = this.props
+
     return (
       <div id='nav' className={`nav-${this.state.showFixedNav ? 'fixed' : 'static'}`}>
         <div id='nav-bar'>
+          {/* Nav Bar Logo */}
           <a href='/'>
             <div id='nav-logo'>
               <img className='logo' src='/images/full-logo.png' alt='logo' />
             </div>
           </a>
+
+          {/* Drawer Toggle Icons */}
           {this.state.openDrawer ? (
-            <div id='nav-icons'>
+            <div className='nav-toggle-icons'>
               <Close className='nav-icon' onClick={this.handleDrawerToggle} />
             </div>
           ) : (
-            <div className='nav-icons'>
+            <div className='nav-toggle-icons'>
               <Menu className='nav-icon' onClick={this.handleDrawerToggle} />
             </div>
           )}
+
+          {/* Nav Bar Links */}
           <div id='nav-links'>
-            <Link to='/#about'>About Me</Link>
-            <Link to='/#skills'>Skills</Link>
-            <Link to='/#portfolio'>Portfolio</Link>
-            <Link to='/#contact'>Contact</Link>
+            <a className='bar-item' onClick={aboutScroll}>
+              About
+            </a>
+            <a className='bar-item' onClick={skillsScroll}>
+              Skills
+            </a>
+            <a className='bar-item' onClick={portfolioScroll}>
+              Portfolio
+            </a>
+            <a className='bar-item' onClick={contactScroll}>
+              Contact
+            </a>
             <div className='icons'>
               <a className='github' href='github.com/laurynbassett' target='_blank' rel='noopener noreferrer'>
                 <GitHub />
@@ -99,9 +85,49 @@ export default class Navbar extends Component {
               </a>
             </div>
           </div>
-          {this.state.openDrawer && <div id='nav-drawer'>{drawer}</div>}
+
+          {/* Nav Bar Drawer */}
+          {this.state.openDrawer && (
+            <div id='nav-drawer'>
+              <Drawer {...this.props} />
+            </div>
+          )}
         </div>
       </div>
     )
   }
+}
+
+const Drawer = props => {
+  const { aboutScroll, contactScroll, portfolioScroll, skillsScroll } = props
+
+  return (
+    <List component='nav' className='nav-drawer' aria-label='contacts'>
+      <ListItem button className='drawer-item' onClick={aboutScroll}>
+        About
+      </ListItem>
+      <ListItem button className='drawer-item' onClick={skillsScroll}>
+        Skills
+      </ListItem>
+      <ListItem button className='drawer-item' onClick={portfolioScroll}>
+        Portfolio
+      </ListItem>
+      <ListItem button className='drawer-item' onClick={contactScroll}>
+        Contact
+      </ListItem>
+      <ListItem button className='drawer-item' className='icons'>
+        <a className='github' href='github.com/laurynbassett' target='_blank' rel='noopener noreferrer'>
+          <GitHub />
+        </a>
+        <a
+          className='linked-in'
+          href='https://www.linkedin.com/in/laurynbassett/'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <LinkedIn />
+        </a>
+      </ListItem>
+    </List>
+  )
 }

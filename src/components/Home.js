@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react'
 import { About, Contact, initGA, PageView, Portfolio, Skills, Welcome } from '.'
 
-const Home = () => {
+const Home = props => {
+  const { aboutScroll, aboutRef, contactRef, portfolioRef, skillsRef } = props
+
   useEffect(() => {
     // Set Google Analytics on page
     initGA()
@@ -10,18 +12,18 @@ const Home = () => {
 
   return (
     <div id='home'>
-      <Welcome />
+      <Welcome aboutScroll={aboutScroll} />
       <div id='#about'>
-        <About />
+        <About aboutRef={aboutRef} />
       </div>
       <div id='#skills'>
-        <Skills />
+        <Skills skillsRef={skillsRef} />
       </div>
       <div id='#portfolio'>
-        <Portfolio />
+        <Portfolio portfolioRef={portfolioRef} />
       </div>
       <div id='#contact'>
-        <Contact />
+        <Contact contactRef={contactRef} />
       </div>
     </div>
   )

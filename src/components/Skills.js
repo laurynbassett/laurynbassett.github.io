@@ -23,7 +23,7 @@ export default class Skills extends Component {
   render() {
     return (
       <VisibilitySensor onChange={this.onChange}>
-        <div className='section-skills'>
+        <div className='section-skills' ref={this.props.skillsRef}>
           <div className='header'>Skills</div>
           <div className='row'>
             <div className='col left'>

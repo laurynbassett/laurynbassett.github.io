@@ -1,19 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Portfolio = () => {
+const Portfolio = props => {
   return (
-    <div className='section-portfolio'>
+    <div className='section-portfolio' ref={props.portfolioRef}>
       <div className='header'>Portfolio</div>
       <div className='row'>
         <div className='col left'>
           <div className='text-header left'>
-            {/* <Link to='/banter'> */}
-            <a href='https://github.com/laurynbassett/banter-app' target='_blank' rel='noopener noreferrer'>
+            <Link to='/banter'>
               <h3>Banter</h3>
               <div className='subheader'>Mobile App</div>
-            </a>
-            {/* </Link> */}
+            </Link>
           </div>
           <div className='text-body left'>
             <div className='row'>
