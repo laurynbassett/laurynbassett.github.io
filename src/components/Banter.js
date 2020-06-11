@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import FsLightbox from 'fslightbox-react'
 import { GitHub } from '@material-ui/icons'
+import FsLightbox from 'fslightbox-react'
 
-const images = [
+import { Gallery } from '.'
+
+const galleryImages = [
   { src: '/images/banter/splash.png', alt: 'splash' },
   { src: '/images/banter/contacts.png', alt: 'contacts' },
   { src: '/images/banter/new-chat.png', alt: 'new-chat' },
@@ -42,29 +44,12 @@ export default class Banter extends Component {
         <a href='https://github.com/laurynbassett/banter-app' target='_blank' rel='noopener noreferrer'>
           <GitHub />
         </a>
-        <Gallery>
-          {images.map(({ src, alt }, j) => (
-            <Image onClick={() => this.toggleLightbox(j)} key={alt}>
-              <img alt={alt} src={src} className='image' />
-            </Image>
-          ))}
-        </Gallery>
+        <Gallery images={galleryImages} toggleLightbox={this.toggleLightbox} />
         <FsLightbox toggler={lightboxIsOpen} sources={lightboxImages} />
-        {/* <ModalGateway>
-          {lightboxIsOpen ? (
-            <Modal onClose={this.toggleLightbox}>
-              <Carousel views={images} currentIndex={selectedIndex} styles={customStyles} />
-            </Modal>
-          ) : null}
-        </ModalGateway> */}
       </div>
     )
   }
 }
-
-const Gallery = props => <div className='gallery' {...props} />
-
-const Image = props => <div className='image-container' {...props} />
 
 const customStyles = {
   // header: (base, state) => ({
