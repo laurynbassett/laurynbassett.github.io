@@ -58,6 +58,13 @@ code {
   text-decoration: none;
 }
 
+.nav-drawer a {
+  color: #939393;
+  font-weight: 300;
+  display: inline-block;
+  text-decoration: none;
+}
+
 /* -- NAV BAR -- */
 #nav-bar {
   display: flex;

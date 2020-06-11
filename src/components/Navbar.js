@@ -68,6 +68,9 @@ export default class Navbar extends Component {
             <a className='bar-item' onClick={portfolioScroll}>
               Portfolio
             </a>
+            <a className='bar-item' href='/files/resume.pdf' target='_blank' rel='noopener noreferrer'>
+              Resume
+            </a>
             <a className='bar-item' onClick={contactScroll}>
               Contact
             </a>
@@ -111,6 +114,11 @@ const Drawer = props => {
       </ListItem>
       <ListItem button className='drawer-item' onClick={portfolioScroll}>
         Portfolio
+      </ListItem>
+      <ListItem button>
+        <a href='/files/resume.pdf' target='_blank' rel='noopener noreferrer'>
+          Resume
+        </a>
       </ListItem>
       <ListItem button className='drawer-item' onClick={contactScroll}>
         Contact
