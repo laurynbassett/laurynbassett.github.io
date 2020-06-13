@@ -5,8 +5,8 @@ const Gallery = props => {
 
   return (
     <div className='gallery'>
-      {images.map(({ src, alt }, j) => (
-        <div className='image-container' onClick={toggleLightbox} key={alt}>
+      {images.map(({ src, alt }, idx) => (
+        <div className='image-container' onClick={() => toggleLightbox(idx + 1)} key={alt}>
           <img alt={alt} src={src} className='image' />
         </div>
       ))}

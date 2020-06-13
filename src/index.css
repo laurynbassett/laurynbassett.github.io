@@ -745,26 +745,99 @@ img.profile.transition {
 /* ----- PORTFOLIO PROJECT PAGE ----- */
 
 .project-container {
-  padding: 10px;
+  /* display: flex;
+  flex-direction: column; */
+  padding: 1rem;
+}
+
+hr {
+  margin: 1rem;
+}
+
+.project-container .row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.project-container .column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  margin: 0.5rem;
+  padding: 1rem;
+}
+
+.project-container .header {
+  margin-bottom: 1rem;
+  font-size: 32px;
+  font-weight: 600;
+  color: #666666;
+}
+
+.project-container .subheader {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.project-container .green {
+  color: #c4e3cb;
+}
+
+.project-container .white {
+  color: white;
+}
+
+.project-container .med-gray {
+  color: #a7a7a7;
+}
+
+.project-container .dark-gray {
+  color: #666666;
+}
+
+.project-container .text {
+  margin: 0.5rem;
+  font-family: 'Open Sans';
+  font-weight: 300;
+}
+
+.project-container .filled {
+  border-radius: 5px;
+  margin: 1rem;
+}
+
+.project-container .green-fill {
+  background-color: #c4e3cb;
+  color: white;
+}
+
+.project-container .gray-fill {
+  background-color: #c9c9c9;
+  color: white;
 }
 
 .project-container .gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
   overflow: 'hidden';
+}
+.project-container .gallery > * {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .project-container .image-container {
-  background-color: '#eee';
-  box-sizing: 'border-box';
-  float: 'left';
-  margin: gutter;
-  overflow: 'hidden';
-  padding-bottom: 16%;
-  position: 'relative';
   width: 25%;
 }
 
 .project-container .image-container:hover {
   opacity: 0.9;
+  cursor: pointer;
 }
 
 .project-container .image {
@@ -781,4 +854,8 @@ img.profile.transition {
 
 .project-container .image:hover {
   cursor: 'pointer';
+}
+
+.project-container .icon {
+  color: #939393;
 }
