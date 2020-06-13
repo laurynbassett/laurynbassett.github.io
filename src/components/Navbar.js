@@ -75,7 +75,7 @@ export default class Navbar extends Component {
               Contact
             </a>
             <div className='icons'>
-              <a className='github' href='github.com/laurynbassett' target='_blank' rel='noopener noreferrer'>
+              <a className='github' href='https://github.com/laurynbassett' target='_blank' rel='noopener noreferrer'>
                 <GitHub />
               </a>
               <a
@@ -124,7 +124,7 @@ const Drawer = props => {
         Contact
       </ListItem>
       <ListItem button className='drawer-item' className='icons'>
-        <a className='github' href='github.com/laurynbassett' target='_blank' rel='noopener noreferrer'>
+        <a className='github' href='https://github.com/laurynbassett' target='_blank' rel='noopener noreferrer'>
           <GitHub />
         </a>
         <a
