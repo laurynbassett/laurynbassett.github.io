@@ -767,6 +767,7 @@ hr {
   flex: 1;
   margin: 0.5rem;
   padding: 1rem;
+  max-width: 50%;
 }
 
 .project-container .header {
@@ -777,8 +778,8 @@ hr {
 }
 
 .project-container .subheader {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
   font-size: 20px;
   font-weight: 500;
 }
@@ -800,7 +801,8 @@ hr {
 }
 
 .project-container .text {
-  margin: 0.5rem;
+  margin: 0.5em;
+  margin-bottom: 1em;
   font-family: 'Open Sans';
   font-weight: 300;
 }
@@ -854,6 +856,10 @@ hr {
 
 .project-container .image:hover {
   cursor: 'pointer';
+}
+
+.project-container .video {
+  margin: 1rem;
 }
 
 .project-container .icon {

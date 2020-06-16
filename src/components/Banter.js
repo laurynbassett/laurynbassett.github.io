@@ -3,7 +3,8 @@ import { GitHub } from '@material-ui/icons'
 import { Divider } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import FsLightbox from 'fslightbox-react'
-// import ReactPlayer from 'react-player'
+import { Carousel } from 'react-responsive-carousel'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 import { Gallery } from '.'
 
@@ -34,23 +35,41 @@ const lightboxImages = [
   '/images/banter/voice.png'
 ]
 
+const galleryGifs = [
+  { src: '/images/banter/add-contact.gif', alt: 'add-contact' },
+  { src: '/images/banter/contacts.gif', alt: 'contacts' },
+  { src: '/images/banter/voice-note.gif', alt: 'voice-note' }
+]
+
+const lightboxGifs = [
+  '/images/banter/add-contact-1.gif',
+  '/images/banter/contacts-1.gif',
+  '/images/banter/voice-note-1.gif'
+]
+
 class Banter extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      slide: 0,
-      lightboxIsOpen: false
+      gifSlide: 0,
+      gifLightboxIsOpen: false,
+      imgSlide: 0,
+      imgLightboxIsOpen: false
     }
-    this.toggleLightbox = this.toggleLightbox.bind(this)
+    this.toggleGifLightbox = this.toggleGifLightbox.bind(this)
+    this.toggleImgLightbox = this.toggleImgLightbox.bind(this)
   }
 
-  toggleLightbox = slide => {
-    console.log('SLIDE', slide)
-    this.setState({ lightboxIsOpen: !this.state.lightboxIsOpen, slide })
+  toggleGifLightbox = gifSlide => {
+    this.setState({ gifLightboxIsOpen: !this.state.gifLightboxIsOpen, gifSlide })
+  }
+
+  toggleImgLightbox = imgSlide => {
+    this.setState({ imgLightboxIsOpen: !this.state.imgLightboxIsOpen, imgSlide })
   }
 
   render() {
-    const { slide, lightboxIsOpen } = this.state
+    const { gifSlide, gifLightboxIsOpen, imgSlide, imgLightboxIsOpen } = this.state
     const { classes } = this.props
 
     return (
@@ -60,8 +79,26 @@ class Banter extends Component {
         {/* </div> */}
         <div className='row'>
           <div className='column'>
-            <Gallery images={galleryImages} toggleLightbox={this.toggleLightbox} />
-            <FsLightbox toggler={lightboxIsOpen} slide={slide} sources={lightboxImages} />
+            {/* <Gallery images={galleryImages} toggleLightbox={this.toggleImgLightbox} /> */}
+            <Carousel showArrows={true}>
+              {galleryImages.map(({ src, alt }, idx) => (
+                <div className='' onClick={() => this.toggleImgLightbox(idx + 1)} key={alt}>
+                  <img alt={alt} src={src} />
+                </div>
+              ))}
+            </Carousel>
+            <FsLightbox toggler={imgLightboxIsOpen} slide={imgSlide} sources={lightboxImages} />
+            <div className='video'>
+              <iframe
+                width='100%'
+                height='168%'
+                src='https://www.youtube.com/embed/TDe3Sa-4f2I'
+                borderRa
+                frameBorder='0'
+                allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+                allowFullScreen
+              />
+            </div>
           </div>
           <div className='column filled green-fill'>
             <div className='subheader white'>Overview</div>
@@ -85,10 +122,9 @@ class Banter extends Component {
 
             <div className='subheader white'>Tech Stack</div>
             <div className='text'>
-              React Native ∙ Redux<br />
+              React Native ∙ Redux • Expo • React Navigation<br />
               Firebase Realtime Database • Firebase Authentication<br />Firebase Storage • Cloud Functions<br />
-              Cloud Translate API • Cloud Speech-to-Text API<br />
-              Expo
+              Cloud Translate API • Cloud Speech-to-Text API
             </div>
             <Divider className={classes.root} />
             <a
@@ -102,54 +138,71 @@ class Banter extends Component {
           </div>
         </div>
         <div className='row'>
-          <div className='column filled gray-fill'>
-            <div className='subheader gray'>My Role</div>
-            <div className='text'>
-              The main screens that I was responsible for were the Single Chat screen, Contacts screen, and Add Contact
-              screen.
+          <div className='column'>
+            <div className='filled gray-fill'>
+              <div className='subheader gray'>Data Management</div>
+              <div className='text'>
+                App data was managed in Firebase using the Realtime Database and Cloud Storage. To maximize data
+                retrieval efficiency and simplify queries, we used a flattened data structure, which splits data into
+                separate paths, as opposed to nesting data. We stored data under three main nodes, users, messages, and
+                chats.
+              </div>
             </div>
-            <div className='text'>
-              In each screen, I used the <code>connect()</code> function from the React Redux library, which provided
-              each screen with access to our Redux store. This allows us to extract data with{' '}
-              <code>mapStateToProps</code> and dispatch actions with <code>mapDispatchToProps</code> from a component
-              level without having to pass them .
-            </div>
-            <h3>Single Chat Screen</h3>
-            <div className='text'>
-              The Single Chat Screen shows an individual text conversation between the current user and a single
-              contact.
-            </div>
-            <div className='text'>For new conversations, </div>
-            <div className='text'>For existing conversations, messages are fetched from the </div>
+            <div className='filled gray-fill'>
+              <h3>Screens</h3>
+              <div className='text'>
+                My focus was centred around the Single Chat, Contacts, and Add Contact screens. Each screen was
+                connected to our Redux store, allowing them to access/extract state data and dispatch actions at the
+                component level.
+              </div>
 
-            <h3>Contacts Screen</h3>
-            <div className='text'>
-              When a logged in user opens the app, they are directed to the All Chats screen, where the initial user
-              data is loaded. This includes their existing chats, first 20 messages for each chat, contacts, and other
-              relevant user data, like personal settings. The contacts are loaded through a dispatch function called{' '}
-              <code>fetchContacts()</code>, which reads contact data from the path <code>/users/$uid/contacts</code> and
-              listens for changes using the <code>on()</code> method of <code>firebase.database.Reference</code> to
-              observe events.
+              <h4>Single Chat Screen</h4>
+              <div className='text'>
+                The Single Chat Screen displayed one-to-one chats between the current user and a single contact. A new
+                chat was stored in our Realtime Database once the first message was sent, which would dispatch a
+                postMessage function that set off a chain of events, including creating a new chat ID and updating the
+                three main database nodes. Existing chat messages were fetched in groups of 25 at a time to limit the
+                amount of downloaded data. On fetch, a child-added event listener was set on the specific chat path
+                under the messages node, which is triggered once for each existing child and then again every time a new
+                child is added to the specified path, updating the Single Chat screen in realtime.
+              </div>
+              <div className='text'>
+                I also added voice recording and voice-to-text translation functionality within the chat screen. To
+                handle the recording and audio playback I used the AV package from the Expo library. Once a voice note
+                was sent, I stored the local audio in Cloud Storage and passed the download URL to a Cloud Function that
+                used Cloud Speech-to-Text API to transcribe the recording. The audio and transcription were then stored
+                in our Realtime Database to be fetched and appended to the messages in the Single Chat screen.
+              </div>
+
+              <h4>Contacts & Add Contact Screen</h4>
+              <div className='text'>
+                To display contacts data, I used a sectioned list to sort and section contacts alphabetically. To filter
+                contacts, I implemented a search function, which{' '}
+              </div>
             </div>
-            <div className='text'>
-              Because the contacts data is stored in our Redux store on the initial load, all we have to do is map the
-              contacts from our user reducer in the Redux store to our Contact List component props. This allowed the
-              component to access all the contacts for the current user.
+            <div className='filled gray-fill'>
+              <h3>Front-End</h3>
+              <div className='text'>
+                I was responsible for the UI of the All Chats, Single Chat, Group Chat, and Contacts screens, as well as
+                their nested screens. I also designed the app logo and splash screen, bottom tab navigation bar and chat
+                screen headers. For each screen, I used React Native StyleSheets to customize the appearance at the
+                component level. I also used two libraries, React Native Elements, to style the search bar in the
+                Contacts screen, and GiftedChat, which provided the basic message UI.
+              </div>
             </div>
-            <h3>Add Contact Screen</h3>
-            <div className='text'>For the contacts screen, I</div>
           </div>
           <div className='column'>
-            <div className='video'>
-              <iframe
-                width='100%'
-                height='100%'
-                src='https://www.youtube.com/embed/TDe3Sa-4f2I'
-                frameBorder='0'
-                allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-                allowFullScreen
-              />
+            <Gallery images={galleryGifs} toggleLightbox={this.toggleGifLightbox} />
+            <FsLightbox toggler={gifLightboxIsOpen} slide={gifSlide} sources={lightboxGifs} />
+            {/* <div className='gif'>
+              <img className='image' src='/images/banter/add-contact.gif' alt='add-contact' />
             </div>
+            <div className='gif'>
+              <img className='image' src='/images/banter/contacts.gif' alt='contacts' />
+            </div>
+            <div className='gif'>
+              <img className='image' src='/images/banter/voice-note.gif' alt='voice-note' />
+            </div> */}
           </div>
         </div>
 
