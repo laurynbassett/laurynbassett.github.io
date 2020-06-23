@@ -5,6 +5,7 @@ const Portfolio = props => {
   return (
     <div className='section-portfolio' ref={props.portfolioRef}>
       <div className='header'>Portfolio</div>
+      <div className='subheader'>click any project title for more info</div>
       <div className='row'>
         <div className='col left'>
           <div className='text-header left'>
@@ -44,7 +45,11 @@ const Portfolio = props => {
       <div className='row'>
         <div className='col left'>
           <div className='text-header left'>
-            <a href='https://github.com/sjli-grace-shopper/covid-store' target='_blank' rel='noopener noreferrer'>
+            <a
+              href='https://github.com/laurynbassett/grace-shopper-covid-store'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               {/* <Link to='/grace-shopper'> */}
               <h3>Grace Shopper</h3>
               <div className='subheader'>Ecommerce Site</div>

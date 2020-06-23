@@ -525,10 +525,20 @@ img.profile.transition {
 }
 
 .section-portfolio .header {
-  margin: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   font-size: 28px;
   font-weight: 400;
   color: #c4e3cb;
+}
+
+.section-portfolio > .subheader {
+  padding-bottom: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(179, 179, 179);
 }
 
 .section-portfolio > .row {
@@ -588,13 +598,14 @@ img.profile.transition {
 .section-portfolio .text-header:hover {
   background-color: #b6dabe;
   transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  text-decoration: underline;
 }
 
 .section-portfolio .text-header:active {
   opacity: 0.8;
 }
 
-.section-portfolio .subheader {
+.section-portfolio h3 .subheader {
   font-weight: 300;
 }
 
