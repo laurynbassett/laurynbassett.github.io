@@ -34,8 +34,8 @@ const Portfolio = props => {
           </div>
           <div className='text-body right'>
             <div className='row'>
-              <img src='/images/graze/post.gif' alt='graze-edit' />
               <img src='/images/graze/profile.png' alt='graze-profile' />
+              <img src='/images/graze/post.gif' alt='graze-edit' />
               <img src='/images/graze/feed.gif' alt='graze-feed' />
             </div>
           </div>

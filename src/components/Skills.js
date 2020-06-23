@@ -43,7 +43,9 @@ export default class Skills extends Component {
               </div>
               <div className='text-body middle'>
                 React ∙ Redux ∙ React Native<br />
-                Express.js ∙ Sequelize ∙ Material-UI<br />Jasmine ∙ Mocha ∙ Chai ∙ Enzyme
+                Express ∙ Sequelize ∙ Expo<br />
+                React Navigation ∙ Material-UI<br />
+                Jasmine ∙ Mocha ∙ Chai ∙ Enzyme
               </div>
             </div>
             <div className='col right'>

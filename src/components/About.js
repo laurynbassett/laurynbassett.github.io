@@ -12,13 +12,14 @@ const About = props => {
           <CardContent className='text'>
             I'm a Full Stack Developer with a degree in Psychology and Sociology. Through my background in Ecommerce and
             Data Analysis, I was exposed to coding and became fascinated with the freedom and possibilities that
-            technology afforded. Throughout my non-technical experience, I always looked for ways to improve existing
-            processes through technological implementations.
+            technology opened up. This influenced my non-technical experience, where I always sought out ways to improve
+            existing processes via technological implementations.
             <div className='paragraph'>
               In 2019, I took the leap to becoming a professional developer and learned JavaScript before joining
               Fullstack Academy in Chicago, where I completed their 16-week immersive programming course. Fullstack is a
-              highly competitive, top ranked program with a focus on pair programming. Many Fullstack Academy graduates
-              have gone on to work at Google, Facebook, Amazon, various Fortune 100 firms, and countless start-ups.
+              highly competitive and top ranked program, but what sets them apart from others is their focus on pair
+              programming. Many Fullstack Academy graduates have gone on to work at Google, Facebook, Amazon, various
+              Fortune 100 firms, and countless start-ups.
             </div>
             <div className='paragraph'>
               As an avid problem solver, being a developer gives me the opportunity to challenge myself in ways I never
@@ -36,7 +37,6 @@ const About = props => {
             </div>
 
             <div className='paragraph'>
-              {' '}
               I'm looking to build on my existing development experience and grow with a company where I can contribute
               to and be a part of a bigger picture.
             </div>
