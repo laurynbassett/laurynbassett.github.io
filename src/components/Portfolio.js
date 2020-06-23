@@ -5,7 +5,7 @@ const Portfolio = props => {
   return (
     <div className='section-portfolio' ref={props.portfolioRef}>
       <div className='header'>Portfolio</div>
-      <div className='subheader'>click any project title for more info</div>
+      {/* <div className='subheader'>Click any Project for More Info</div> */}
       <div className='row'>
         <div className='col left'>
           <div className='text-header left'>
@@ -18,9 +18,11 @@ const Portfolio = props => {
           </div>
           <div className='text-body left'>
             <div className='row'>
-              <img src='/images/banter/splash.png' alt='banter-splash' />
-              <img src='/images/banter/contacts.gif' alt='banter-contacts' />
-              <img src='/images/banter/voice-note.gif' alt='banter-chat' />
+              <a href='https://github.com/laurynbassett/banter-app' target='_blank' rel='noopener noreferrer'>
+                <img src='/images/banter/splash.png' alt='banter-splash' />
+                <img src='/images/banter/contacts.gif' alt='banter-contacts' />
+                <img src='/images/banter/voice-note.gif' alt='banter-chat' />
+              </a>
             </div>
           </div>
         </div>
@@ -35,9 +37,11 @@ const Portfolio = props => {
           </div>
           <div className='text-body right'>
             <div className='row'>
-              <img src='/images/graze/profile.png' alt='graze-profile' />
-              <img src='/images/graze/post.gif' alt='graze-edit' />
-              <img src='/images/graze/feed.gif' alt='graze-feed' />
+              <a href='https://github.com/laurynbassett/graze-app' target='_blank' rel='noopener noreferrer'>
+                <img src='/images/graze/profile.png' alt='graze-profile' />
+                <img src='/images/graze/post.gif' alt='graze-edit' />
+                <img src='/images/graze/feed.gif' alt='graze-feed' />
+              </a>
             </div>
           </div>
         </div>
@@ -58,7 +62,13 @@ const Portfolio = props => {
           </div>
           <div className='text-body left'>
             <div className='row'>
-              <img src='/images/grace-shopper/home.png' alt='grace-shopper-home' />
+              <a
+                href='https://github.com/laurynbassett/grace-shopper-covid-store'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <img src='/images/grace-shopper/home.png' alt='grace-shopper-home' />
+              </a>
             </div>
           </div>
         </div>
@@ -73,7 +83,9 @@ const Portfolio = props => {
           </div>
           <div className='text-body right'>
             <div className='row'>
-              <img src='/images/orderista/home.png' alt='orderista-home' />
+              <a href='https://github.com/laurynbassett/orderista' target='_blank' rel='noopener noreferrer'>
+                <img src='/images/orderista/home.png' alt='orderista-home' />
+              </a>
             </div>
           </div>
         </div>
