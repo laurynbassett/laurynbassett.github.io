@@ -84,7 +84,7 @@ const Portfolio = props => {
           <div className='text-body right'>
             <div className='row'>
               <a href='https://github.com/laurynbassett/orderista' target='_blank' rel='noopener noreferrer'>
-                <img src='/images/orderista/home.png' alt='orderista-home' />
+                <img src='/images/orderista/home.gif' alt='orderista-home' />
               </a>
             </div>
           </div>
